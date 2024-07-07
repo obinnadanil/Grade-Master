@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="wwww.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Register Student</title>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <div class="card-body">
+                <h1 class="text-center">Register Student</h1>
+                <form class="form-horizontal" th:action="@{/registerStudent}" th:object="${user}" method="POST">
+                    <div class="form-group">
+                        <label>Registration Number: </label>
+                        <input
+                                class="form-control"
+                                placeholder="Registration Number"
+                                type="text"
+                                th:field="*{username}"
+                                name="username"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label>Password: </label>
+                        <input
+                                class="form-control"
+                                placeholder="password"
+                                type="password"
+                                th:field="*{password}"
+                                name="password"
+                        >
+                    </div>
+
+                    <div class=" d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+
+        .dashboard-item {
+          background-color: #f8f9fa;
+          padding: 20px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+        }
+        body{
+        background: #c5d1c8;
+        }
+        .logo{
+      font-size: 24px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bolder;
+      font-style: italic;
+
+      }
+      .lead{
+        color: #6d19db;
+        font-size: 28px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bolder;
+        font-style: italic;
+      }
+      .trail{
+        color: #e95c0a;
+        font-size: 16px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bolder;
+        font-style: italic;
+
+      }
+      .logout{
+
+      position: fixed;
+      bottom: 5px;
+      left: 4px;
+
+    }

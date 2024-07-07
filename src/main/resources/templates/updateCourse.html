@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/stlye2.css}"/>
+    <title>Update Course</title>
+</head>
+<body>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Update Course</h1>
+            <div class="card-body">
+                <form th:action="@{/course/update/{id} (id=${courseDto.id})}" th:object="${courseDto}" method="POST">
+
+                    <div class="form-group">
+                        <label>First Name:</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                name="courseCode"
+                                placeholder="course code"
+                                th:field="*{courseCode}">
+                        <span class="error" th:if="${#fields.hasErrors('courseCode')}" th:errors="*{courseCode}" ></span>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label>Course Name:</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                name="courseName"
+                                placeholder="Course Name"
+                                th:field="*{courseName}">
+                        <span class="error" th:if="${#fields.hasErrors('courseName')}" th:errors="*{courseName}" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Time Stamp:</label>
+                        <input
+                                type="datetime-local"
+                                name="registrationDate"
+                                class="form-control"
+                                placeholder="time stamp"
+                                th:value="*{registrationDate}"
+                                th:field="*{registrationDate}"
+                                readonly
+                        >
+                    </div>
+                    <div class="footer" >
+                        <button type="submit" class="btn btn-primary">submit</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<form class="fixed-bottom text-left ml-3 mb-3" id="logoutForm" th:action="@{/logout}" method="post">
+    <button type="submit" class="btn btn-danger">Logout</button>
+</form>
+</body>
+</html>

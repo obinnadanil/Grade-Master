@@ -1,0 +1,21 @@
+
+        body {
+            margin: 0px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        i {
+
+            color: red;
+            font-size: 150px;
+        }
+
+        .error-message {
+            margin-top: 3px;
+            margin-bottom: 0px;
+            font-size: 48px;
+        }
+        .error-info{
+            font-size: 18px;
+        }

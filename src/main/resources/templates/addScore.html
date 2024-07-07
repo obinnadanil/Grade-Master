@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/stlye2.css}" />
+    <title>Add Score</title>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                <h1 class="text-center">Add Score</h1>
+
+
+
+                <div class="card-body">
+                    <form class="form-horizontal" th:action="@{/scores}" th:object="${scoreDto}" method="POST">
+                        <div class="form-group">
+                            <label for="course">Course Code:</label>
+                            <select class="form-control" th:field="*{courseCode}">
+                                <option th:each="course : ${courses}" th:text="${course.courseCode}"
+                                    th:value="${course.courseCode}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Registration Number:</label>
+                            <input type="text" name="regNumber" class="form-control" placeholder="Registration Number"
+                                th:field="*{regNumber}">
+                            <span class="error" th:if="${#fields.hasErrors('regNumber')}"
+                                th:errors="*{regNumber}"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Score:</label>
+                            <input type="text" name="score" class="form-control" placeholder="Score"
+                                th:field="*{score}">
+                            <span class="error" th:if="${#fields.hasErrors('score')}" th:errors="*{score}"></span>
+
+                        </div>
+                        <div class="footer mx-auto">
+                            <button type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="fixed-bottom text-left ml-3 mb-3" id="logoutForm" th:action="@{/logout}" method="post">
+        <button  type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</body>
+
+</html>

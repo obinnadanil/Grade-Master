@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Student Details</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background: #c5d1c8;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .top-div{
+            background-color: rgb(28, 97, 143);
+            font-size: 28px;
+            color: #fff;
+        }
+        .name{
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .logout{
+         position: fixed;
+         bottom: 5px;
+         left: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <a class="navbar-brand ml-0 logo" th:href="@{/}"><span class="lead">G</span><span class="trail">rade</span>
+            <span class="lead">M</span><span class="trail">aster</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/students}"><i class='bx bxs-group'></i> Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/courses}"><i class='bx bxs-book'></i> Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/scores}"><i class='bx bxs-bar-chart-alt-2'></i>Scores</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="mt-0 top-div text-center">Federal University of Nigeria</div>
+    <div class="container">
+        <div class="col">
+        <div class="row">
+            <div class="mx-auto mt-3 "><h1>Wecome</h1> </div>
+        </div>
+        <div class="row ">
+            <div class="mx-auto" th:if="${session.studentDetails != null}">
+                <span class="name" th:text="${session.studentDetails.firstName.substring(0,1).toUpperCase() + session.studentDetails.firstName.substring(1)}"></span>
+                   <span class="name" th:text="${session.studentDetails.lastName.substring(0,1).toUpperCase() + session.studentDetails.lastName.substring(1)}"></span>
+                <div class="name" th:text="${session.studentDetails.regNumber}"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mx-auto" th:unless="${session.studentDetails != null}">
+                <p>No student details found</p>
+            </div>
+        </div>
+        <div class="row ">
+
+
+            <div class="mx-auto mt-3">
+            <a th:href="@{/studentResult/{id}(id=${session.studentDetails.id})}" class="btn btn-primary"> View Result</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <form class="fixed-bottom text-left ml-3 mb-3" id="logoutForm" th:action="@{/logout}" method="post">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+       
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
