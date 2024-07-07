@@ -11,7 +11,7 @@ How to run the project locally:
 
 -set up your git and create the directory you would save the project
 
--open git bash on the directory and clone the project using this command 'git clone https://Iloke@bitbucket.org/obinnadanil/grademaster_spring_boot_project.git'.
+-open git bash on the directory and clone the project using this command '[git clone https://Iloke@bitbucket.org/obinnadanil/grademaster_spring_boot_project.git](https://github.com/obinnadanil/Grade-Master-Spring-Boot-Project.git)'.
 
 -open the cloned project on your chosen IDE
 
