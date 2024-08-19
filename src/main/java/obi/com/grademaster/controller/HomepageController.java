@@ -30,7 +30,7 @@ public class HomepageController {
         model.addAttribute("studentList",studentList);
         model.addAttribute("courseList",courseList);
 
-        return  "homepage";
+        return  "adminDashboard";
     }
 
 }

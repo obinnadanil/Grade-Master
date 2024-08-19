@@ -68,7 +68,8 @@ public class UserController {
         newUser.setUsername(user.getUsername());
         newUser.setPassword(encoder.encode(user.getPassword()));
             newUser.setRoles("STUDENT");
-            boolean isStudentExist = studentService.isStudentExist(newUser.getUsername());
+            String regNumber = newUser.getUsername();
+            boolean isStudentExist = studentService.isStudentExist(regNumber);
             boolean isUsernameExist = service.getUsers().stream()
                     .anyMatch(user1 -> user1.getUsername().equals(newUser.getUsername()));
             if(isStudentExist && !isUsernameExist) {
@@ -95,7 +96,7 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/logout")
+    @GetMapping("/logout")
     public String performLogout(Authentication authentication, HttpServletRequest request, HttpServletResponse response) {
         this.logoutHandler.logout(request, response, authentication);
         return "redirect:/login";
