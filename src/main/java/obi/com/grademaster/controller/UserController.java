@@ -43,7 +43,7 @@ public class UserController {
         model.addAttribute("user", user);
         return "registerStudent";
     }
-    @PostMapping("/")
+    @PostMapping("/addAdmin")
     public String saveAdmin(@Valid @ModelAttribute("user") User user, BindingResult result, Model attributes){
        if (result.hasErrors())
            return "addAdminForm";
