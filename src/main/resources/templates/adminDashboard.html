@@ -10,6 +10,9 @@
 
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" th:href="@{/css/homepage.css}">
+    <link rel="stylesheet" th:href="@{/css/stlye2.css}" />
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+
 
 
 </head>
@@ -64,6 +67,17 @@
             <div class="dashboard-item">
                 <h4><i class='bx bxs-bar-chart-alt-2'></i> Scores</h4>
                 <p th:text="'Total: ' +${scoreList.size}"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col text-right mt-8">
+                <a th:href="@{/addAdmin}" class=" btn btn-primary">Print</a>
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@ public class AppConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((request) -> request
-                .requestMatchers("/addAdmin","/registerStudent","/css/**","/registerStudent").permitAll()
+                .requestMatchers("/favicon.ico","/registerStudent","/css/**","/registerStudent").permitAll()
                         .anyRequest()
                         .authenticated())
 

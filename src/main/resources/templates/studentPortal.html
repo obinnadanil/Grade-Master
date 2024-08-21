@@ -51,6 +51,9 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/scores}"><i class='bx bxs-bar-chart-alt-2'></i>Scores</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: red;" th:href="@{/logout}"><i class='bx bx-log-out'></i>Logout</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -82,9 +85,7 @@
         </div>
     </div>
     </div>
-    <form class="fixed-bottom text-left ml-3 mb-3" id="logoutForm" th:action="@{/logout}" method="post">
-        <button type="submit" class="btn btn-danger">Logout</button>
-    </form>
+
        
 
 

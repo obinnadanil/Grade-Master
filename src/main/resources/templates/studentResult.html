@@ -34,6 +34,9 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/scores}"><i class='bx bxs-bar-chart-alt-2'></i>Score Management</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: red;" th:href="@{/logout}"><i class='bx bx-log-out'></i>Logout</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -85,16 +88,11 @@
 
 
 
-    <div class="fixed-bottom">
+    <div class="fixed-top">
         <div class="container-fluid">
             <div class="row">
-                <div class="col text-left mb-3">
-                    <form class="logout" id="logoutForm" th:action="@{/logout}" method="post">
-                    <button type="submit" class="btn btn-danger">Logout</button>
-                </form>
-                </div>
-                <div class="col text-right mb-3">
-                        <a th:href="@{/studentResultPdf/{id} (id=${student.id})}" class=" btn btn-primary">print as pdf</a>
+                <div class="col text-right ">
+                        <a th:href="@{/studentResultPdf/{id} (id=${student.id})}" class=" btn btn-primary">Print</a>
                 </div>
             </div>
         </div>
