@@ -47,6 +47,7 @@ public class StudentController {
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/students")
     public String getStudents(Model model) {
+
         model.addAttribute("studentDtoList", studentService.getStudentDtoList());
         return "students";
     }
