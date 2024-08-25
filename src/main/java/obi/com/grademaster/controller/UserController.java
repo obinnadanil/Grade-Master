@@ -30,7 +30,7 @@ public class UserController {
     @Autowired
     StudentService studentService;
     SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
-
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/addAdmin")
     public String addAdminForm(Model model){
         User user = new User();
@@ -43,6 +43,7 @@ public class UserController {
         model.addAttribute("user", user);
         return "registerStudent";
     }
+    @PreAuthorize("hasAuthority(ROLE_ADMIN)")
     @PostMapping("/addAdmin")
     public String saveAdmin(@Valid @ModelAttribute("user") User user, BindingResult result, Model attributes){
        if (result.hasErrors())

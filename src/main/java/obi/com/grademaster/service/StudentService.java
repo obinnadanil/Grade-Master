@@ -24,7 +24,6 @@ import obi.com.grademaster.exception.StudentNotFoundException;
 import obi.com.grademaster.mapper.StudentMapper;
 import obi.com.grademaster.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -43,8 +42,7 @@ public class StudentService {
     StudentMapper studentMapper;
     @Autowired
     ResourceLoaderService resourceLoaderService;
-    @Autowired
-    ResourceLoader resourceLoader;
+
 
 
     public List<Student> getStudents() {
